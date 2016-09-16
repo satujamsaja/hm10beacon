@@ -1,0 +1,23 @@
+<ion-header>
+  <ion-navbar>
+    <ion-title>
+      HM-10 Beacon
+    </ion-title>
+  </ion-navbar>
+</ion-header>
+
+<ion-content>
+  <ion-list>
+    <ion-item *ngFor="let beacon of beacons" (click)="monitor(beacon)">
+      <ion-thumbnail item-left>
+        <img src="img/beacon.png">
+      </ion-thumbnail>
+      <h2>{{beacon.uuid}}</h2>
+      <p>Major: {{beacon.major}} | Minor: {{beacon.minor}}</p>
+      <p>RSSI: {{beacon.rssi}} | Distance: {{beacon.accuracy}} m</p>
+      <p>Proximity: {{beacon.proximity}}</p>
+      <p>{{region.identifier}}</p>
+      <button clear item-right>View</button>
+    </ion-item>
+  </ion-list>
+</ion-content>
